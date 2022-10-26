@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+    display: grid;
+    grid-template: 1fr 1fr / repeat(3, 1fr);
+    grid-template-areas: 
+    "title title title"
+    "tries score current"
+    ;
+}
+h2 {
+    grid-area: title;
+}
+#scoreTitle {
+    grid-area: score;
+}
+#triesTitle {
+    grid-area: tries;
+}
+#currentCardTitle {
+    grid-area: current;
+}
+
+#game-area {
+    display: grid;
+    grid-template: repeat(4, 150px) / repeat(4, 150px);
+    gap: 20px;
+    margin: auto;
+    width: fit-content;
+}
+
+img {
+    width: 120px;
+}
+
+section {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+  }
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+.is-paired {
+    transform: translateX(-100%) rotateY(-180deg);
+}
