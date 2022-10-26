@@ -162,7 +162,9 @@ function cardFlip() {
                                 document.querySelector("#currentCard").textContent = ""
                                 if (scoreValue == 8) {
                                     setTimeout(() => {
-                                        confirm("Well done! Would you like to play again?")
+                                        if (confirm("Well done! Would you like to play again?")) {
+                                            window.reload()
+                                        } 
                                     }, 1000);
                                 }
                             }
